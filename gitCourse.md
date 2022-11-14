@@ -133,6 +133,10 @@ paso 5
 * git branch
     listar todas las ramas del repositorio
 
+* git push --set-upstream origin branchName
+    añade de forma remota esa rama al repo
+
+
 * git branch --no-merged
     lista ramas no fusionadas a la rama actual
 

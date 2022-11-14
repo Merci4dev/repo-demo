@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: rgb(39, 30, 30);
+    color: aqua;
+}
+
+h2 {
+    width: 80%;
+    background: orange;
+    color: black;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+p {
+    width: 80%;
+    background: black;
+    color: orange;
+    margin: auto;
+    padding: 1rem ;
+}
