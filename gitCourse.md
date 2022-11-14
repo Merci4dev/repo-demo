@@ -45,8 +45,10 @@
     agregar todos los cambios de todos los archivos al staged
 * git status -s 
     para ver el status de los cambio
+* git commit
+    habre la interfaz de visul s code para en nombre del commit
 * git commit -m "commit name"
-    ejecuta el commit 
+    ejecuta el commit directamente con un nombre
 * git push
     enpuja los cmbio de local a remoto (aqui va la url)
 * git pull
