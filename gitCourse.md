@@ -192,4 +192,5 @@ paso 5
     cambiar a una rama
 
 * git checkout id-commit
+    git checkout 3986293 
     cambiar a un commit en particular
