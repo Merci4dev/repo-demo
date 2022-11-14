@@ -104,3 +104,21 @@ paso 5
     doc/*.txt
 * ignorar todos los archivos terminados en .txt dentro de la carpeta doc y también en sus subcarpetas
     doc/**/*.txt
+
+
+# Fusiones
+    Une dos ramas. Para hacer una fusión necesitamos:
+
+    Situarnos en la rama que se quedará con el contenido fusionado.
+    Fusionar.
+    Cuando se fusionan ramas se pueden dar 2 resultados diferentes:
+
+    Fast-Forward: La fusión se hace automática, no hay conflictos por resolver.
+
+    Manual Merge: La fusión hay que hacerla manual, para resolver conflictos de duplicación de contenido.
+
+* git checkout rama-principal
+    nos cambiamos a la rama principal que quedará de la fusión
+
+* git merge rama-secundaria
+    ejecutamos el comando merge con la rama secundaria a fusionar
