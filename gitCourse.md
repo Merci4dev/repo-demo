@@ -117,6 +117,7 @@ paso 5
 
 * git checkout nombre-rama
     cambiar de rama
+    Ojo: hay que hacer commit antes de dejar una rama
 
 * git checkout -b rama
     crear una rama y cambiarte a ella
@@ -135,6 +136,10 @@ paso 5
 
 * git push --set-upstream origin branchName
     añade de forma remota esa rama al repo
+    OJO pero los files no se añaden al repo principal. Si nos cambiamos a una de las rams que pusheamos veremos los files
+
+    par que una rama solo tenga su file y los del repo original hay que ir a la rama principal y despues crear la rama.
+
 
 
 * git branch --no-merged
