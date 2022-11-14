@@ -1,6 +1,7 @@
 # Curso de Git
     Git es un sistema de control de versiones distribuido, lo que significa que un clon local del proyecto es un repositorio de control de versiones completo. Estos repositorios locales plenamente funcionales permiten trabajar sin conexión o de forma remota con facilidad. Los desarrolladores confirman su trabajo localmente y, a continuación, sincronizan su copia del repositorio con la copia en el servidor.
 
+
 # Configuracion Inicial
 * git --version
     ver la version de git intalada
@@ -26,6 +27,7 @@
 * git help config
     ver todas las opciones de la configuración en el navegador
 * 
+
 # Inicializar un projecto de git
     En  git existen 4 estado, 3 de ello suceden en la maquina del user(el el working directory) y el 4 en github
     modified:
@@ -53,3 +55,52 @@
     enpuja los cmbio de local a remoto (aqui va la url)
 * git pull
     para descargar cambion de un repo hacia tu pc
+
+    git init
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/Merci4dev/repo-demo.git
+    git push -u origin main
+
+
+# Pasar de master a main
+paso 1
+* git branch -m master main
+    Crea la rama local main y pásale el historial de la rama master
+
+paso 2
+* git push -u origin main
+Haz un push de la nueva rama local main en el repositorio remoto de GitHub
+
+
+paso 3
+* git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+    Cambia el HEAD actual a la rama main
+
+paso 4
+    Cambia la rama default de master a main en tu repositorio de GitHub (en settings)
+
+paso 5
+* git push origin --delete master
+    Elimina la rama master del repositorio remoto
+
+
+# Ignorar archivos
+    En el archivo .gitignore incluimos todo lo que NO queramos incluir en nuestro repositorio. Lo podemos crear manualmente o con gitignore.io.
+
+    # esto es un comentario
+    archivo.ext
+    carpeta
+    /archivo_desde_raiz.ext
+
+* ignorar todos los archivos que terminen en .log
+    *.log
+
+* excepto production.log
+    !production.log
+
+* ignorar los archivos terminados en .txt dentro de la carpeta doc,
+    pero no en sus subcarpetas
+    doc/*.txt
+* ignorar todos los archivos terminados en .txt dentro de la carpeta doc y también en sus subcarpetas
+    doc/**/*.txt
