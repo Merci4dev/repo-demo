@@ -151,11 +151,11 @@ paso 5
   git rebase rama-principal
     rebasar ramas
 
-
 # Fusiones
     Une dos ramas. Para hacer una fusión necesitamos:
 
     Situarnos en la rama que se quedará con el contenido fusionado.
+
     Fusionar.
     Cuando se fusionan ramas se pueden dar 2 resultados diferentes:
 
@@ -169,17 +169,11 @@ paso 5
     ejecutamos el comando merge con la rama secundaria a fusionar
 
 
-# Cambios en commits
-    Puedes agregar modificaciones al último cambio(commit)
-
-* git log
-    arroja los commit de forma detallada
-
-* git log --oneline
-    arroja todos los commit resumidos
+# Cambios(commits)
+    Puedes agregar modificaciones al último cambio
 
 * git commit --amend --no-edit
-    sin editar el mensaje del último commit (para cuando se te ha olvidado añadir alfo a un file)
+    midifica un commit pero sin modificar el mensaje del último commit. Pero el if del commit se modifica
 
 * git commit --amend -m "nuevo mensaje para el último commit"
     editando el mensaje del último commit
@@ -194,3 +188,134 @@ paso 5
 * git checkout id-commit
     git checkout 3986293 
     cambiar a un commit en particular
+
+# Registro del historial
+* git log 
+    nos permite conocer todo el historial de un proyecto, con la información de la fecha, el autor y id de cada cambio.
+
+* git log --oneline
+    muestra en una sola línea por cambio
+
+* git log > commits.txt
+    guarda el log en la ruta y archivo que especifiquemos
+
+* git log --pretty=format:"%h - %an, %ar : %s"
+    muestra el historial con el formato que indicamos
+
+* git log -n
+    git log -2
+    cambiamos la n por cualquier número entero y mostrará los n cambios recientes
+
+* git log --after="2019-07-07 00:00:00"
+    muestra los cambios realizados después de la fecha especificada
+
+* git log --before="2019-07-08 00:00:00"
+    muestra los cambios realizados antes de la fecha especificada
+
+* muestra los cambios realizados en el rango de fecha especificado
+    git log --after="2019-07-07 00:00:00" --before="2019-07-08 00:00:00"
+
+* git log --oneline --graph --all
+    muestra una gráfica del historial de cambios, rama y fusiones
+
+* git reflog    
+    muestra todo el registro de acciones del log
+    incluyendo inserciones, cambios, eliminaciones, fusiones, etc.
+
+* git diff
+    diferencias entre el Working Directory y el Staging Area
+
+*  git log --oneline --graph --all
+    para ver los commit, ramas, fusines en un grafico 
+
+*  git log --oneline --graph --all > graph.tx
+    lo guarda en file
+
+# Reseteo del historial
+    Podemos eliminar el historial de cambios del proyecto hacia adelante con respecto de un punto de referencia.
+
+* git status
+    nos muestra el listado de archivos nuevos (untracked), borrados o editados
+
+* git reset --soft
+    borra HEAD del repo. reseteo suave
+
+* git reset --mixed
+* git restore --staged 
+    borra HEAD y Staging
+
+* git reset --hard
+    borra todo: HEAD, Staging y Working Directory
+
+* git reset id-commit
+    deshace todos los cambios después del commit indicado, preservando los cambios localmente
+
+* git reset --hard id-commit
+    desecha todo el historial y regresa al commit especificado
+
+# Resetear un repositorio
+    Si en algún momento tienes la necesidad de resetear el historial de cambios de un repositorio para que quede como si lo acabarás de crear ejecuta esta serie de comandos:
+
+cd carpeta-repositorio
+
+* mv .git/config ~/saved_git_config
+    respaldo del git config
+* rm -rf .git
+    ellimina el dir .git
+git init
+    inicializar git
+git branch -M main
+git add .
+git commit -m "Commit inicial"
+* mv ~/saved_git_config .git/config
+    vueve la configuracion al dir .git
+* git push --force origin main
+    hacemos un push
+
+# Remotos
+* git remote
+    muestra los orígenes remotos del repositorio
+
++ git remote -v
+    muestra los orígenes remotos con detalle
+
+* git remote add nombre-orígen https://github.com/usuario/repositorio.git
+agregar un orígen remoto
+
+* git remote rename nombre-viejo nombre-nuevo
+    renombrar un orígen remoto
+
+* git remote remove nombre-orígen
+    eliminar un orígen remoto
+
+* git checkout --track -b rama-remota origin/rama-remota
+    descargar una rama remota a local diferente a la principal
+
+
+# Etiquetas
+    Con esta opción git nos permite versionar nuestro código, librería o proyecto.
+
+* git tag
+    listar etiquetas
+
+* git tag numero-versión
+    crea una etiqueta
+
+* git tag -d numero-versión
+    eliminar una etiqueta
+
+* git show numero-versión
+    mostrar información de una etiqueta
+
+*sincronizando la etiqueta del repositorio local al remoto
+    git add .
+    git  tag v1.0.0
+    git commit -m "v1.0.0"
+    git push origin numero-versión
+
+* generando una etiqueta anotada (con mensaje de commit)
+    git add .
+    git tag -a "v1.0.0" -m "Mensaje de la etiqueta"
+    git push --tags
+
+#
