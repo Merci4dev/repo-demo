@@ -152,4 +152,44 @@ paso 5
     rebasar ramas
 
 
+# Fusiones
+    Une dos ramas. Para hacer una fusión necesitamos:
 
+    Situarnos en la rama que se quedará con el contenido fusionado.
+    Fusionar.
+    Cuando se fusionan ramas se pueden dar 2 resultados diferentes:
+
+    Fast-Forward: La fusión se hace automática, no hay conflictos por resolver.
+    Manual Merge: La fusión hay que hacerla manual, para resolver conflictos de duplicación de contenido.
+
+* git checkout rama-principal
+    nos cambiamos a la rama principal que quedará de la fusión
+
+* git merge rama-secundaria
+    ejecutamos el comando merge con la rama secundaria a fusionar
+
+
+# Cambios en commits
+    Puedes agregar modificaciones al último cambio(commit)
+
+* git log
+    arroja los commit de forma detallada
+
+* git log --oneline
+    arroja todos los commit resumidos
+
+* git commit --amend --no-edit
+    sin editar el mensaje del último commit (para cuando se te ha olvidado añadir alfo a un file)
+
+* git commit --amend -m "nuevo mensaje para el último commit"
+    editando el mensaje del último commit
+
+* git reset --hard HEAD~1
+    eliminar el último commit
+    Podemos desplazarnos en el historial del repositorio hacia atrás o adelante en cambios o ramas , sin afectar el repositorio como tal.
+
+* git checkout nombre-rama
+    cambiar a una rama
+
+* git checkout id-commit
+    cambiar a un commit en particular
