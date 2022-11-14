@@ -104,3 +104,43 @@ paso 5
     doc/*.txt
 * ignorar todos los archivos terminados en .txt dentro de la carpeta doc y también en sus subcarpetas
     doc/**/*.txt
+
+# Clonado de ropositorios
+    git clone https://github.com/mercedes4developers/react-p-portfolio.git
+
+
+# Ramas
+    Una rama nos permite aislar una nueva funcionalidad en nuestro código que después podremos añadir a la versión principal.
+
+* git branch nombre-rama
+    crear rama
+
+* git checkout nombre-rama
+    cambiar de rama
+
+* git checkout -b rama
+    crear una rama y cambiarte a ella
+
+* git branch -d nombre-rama
+    eliminar rama. si estas en una rama tendras que cambiarte para poder eliminar esta
+
+* git push origin --delete nombre-rama
+    eliminar ramas remotas
+
+* git branch -D nombre-rama
+    eliminar rama (forzado)
+
+* git branch
+    listar todas las ramas del repositorio
+
+* git branch --no-merged
+    lista ramas no fusionadas a la rama actual
+
+* git branch --merged
+    lista ramas fusionadas a la rama actual
+
+* git checkout rama-secundaria
+  git rebase rama-principal
+    rebasar ramas
+
+#
